@@ -17,6 +17,7 @@ body {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 header {
@@ -49,15 +50,14 @@ h2 {
 
 section {
   display: flex;
-  gap: 10px;
+  gap: 30px 0;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding: 30px 0;
 }
 
 .card {
-  max-width: 20%;
-  border: 1px solid black;
-  border-radius: 10px;
+  max-width: 230px;
 }
 
 ul {

@@ -11,8 +11,7 @@ export default function Main() {
           <section className="movies">
             {movies.map((movie) => (
               <div key={movie.id} className="card">
-                <img src={"https://image.tmbd.org/t/p/w342" + movie.poster} />
-                <span>{Math.floor(movie.vote / 2)}</span>
+                <img src={"https://image.tmdb.org/t/p/w342" + movie.poster} />
               </div>
               //   <ul key={movie.id}>
               //     <li>TITLE: {movie.title}</li>
@@ -30,8 +29,7 @@ export default function Main() {
           <section className="series">
             {series.map((serie) => (
               <div key={serie.id} className="card">
-                <img src={"https://image.tmbd.org/t/p/w342" + serie.poster} />
-                <span>{Math.floor(serie.vote / 2)}</span>
+                <img src={"https://image.tmdb.org/t/p/w342" + serie.poster} />
               </div>
               //   <ul key={serie.id}>
               //     <li>TITLE: {serie.title}</li>
