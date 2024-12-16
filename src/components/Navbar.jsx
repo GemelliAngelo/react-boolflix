@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../context/GlobalContext";
 
 export default function Navbar() {
-  const { query, setQuery, fetchMovies } = useGlobalContext();
+  const { query, setQuery, fetchMovies, fetchSeries } = useGlobalContext();
 
   const handleFormData = (e) => {
     setQuery(e.target.value);
@@ -10,7 +10,7 @@ export default function Navbar() {
   const handleSubmitData = (e) => {
     e.preventDefault();
     fetchMovies(query);
-    console.log(query);
+    fetchSeries(query);
   };
 
   return (
