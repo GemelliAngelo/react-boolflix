@@ -38,6 +38,7 @@ export const GlobalContextProvider = ({ children }) => {
           title: movie.title,
           originalTitle: movie.original_title,
           language: langFlag(movie.original_language),
+          poster: movie.poster_path,
           vote: movie.vote_average,
         }));
         setMovies(moviesList);
@@ -53,6 +54,7 @@ export const GlobalContextProvider = ({ children }) => {
           title: serie.name,
           originalTitle: serie.original_title,
           language: langFlag(serie.original_language),
+          poster: serie.poster_path,
           vote: serie.vote_average,
         }));
         setSeries(seriesList);

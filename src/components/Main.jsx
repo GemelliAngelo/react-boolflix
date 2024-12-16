@@ -6,35 +6,41 @@ export default function Main() {
   return (
     <main>
       <div className="container">
+        <h2>MOVIES</h2>
         {movies && (
           <section className="movies">
-            <h2>MOVIES</h2>
             {movies.map((movie) => (
-              <ul key={movie.id}>
-                <li>TITLE: {movie.title}</li>
-                <li>ORIGINAL TITLE: {movie.originalTitle}</li>
-                <img
-                  src={"https://flagcdn.com/24x18/" + movie.language + ".png"}
-                />
-                <li>RATING {movie.vote}</li>
-              </ul>
+              <div key={movie.id} className="card">
+                <img src={"https://image.tmbd.org/t/p/w342" + movie.poster} />
+              </div>
+              //   <ul key={movie.id}>
+              //     <li>TITLE: {movie.title}</li>
+              //     <li>ORIGINAL TITLE: {movie.originalTitle}</li>
+              //     <img
+              //       src={"https://flagcdn.com/24x18/" + movie.language + ".png"}
+              //     />
+              //     <li>RATING {movie.vote}</li>
+              //   </ul>
             ))}
           </section>
         )}
+        <h2>TV SERIES</h2>
         {series && (
           <section className="series">
-            <h2>TV SERIES</h2>
             {series.map((serie) => (
-              <ul key={serie.id}>
-                <li>TITLE: {serie.title}</li>
-                <li>ORIGINAL TITLE: {serie.originalTitle}</li>
-                <li>
-                  <img
-                    src={"https://flagcdn.com/24x18/" + serie.language + ".png"}
-                  />
-                </li>
-                <li>RATING {serie.vote}</li>
-              </ul>
+              <div key={serie.id} className="card">
+                <img src={"https://image.tmbd.org/t/p/w342" + serie.poster} />
+              </div>
+              //   <ul key={serie.id}>
+              //     <li>TITLE: {serie.title}</li>
+              //     <li>ORIGINAL TITLE: {serie.originalTitle}</li>
+              //     <li>
+              //       <img
+              //         src={"https://flagcdn.com/24x18/" + serie.language + ".png"}
+              //       />
+              //     </li>
+              //     <li>RATING {serie.vote}</li>
+              //   </ul>
             ))}
           </section>
         )}
