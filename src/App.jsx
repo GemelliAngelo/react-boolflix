@@ -5,7 +5,6 @@ function App() {
   return (
     <GlobalContextProvider>
       <Header />
-      <h1>Hello World</h1>
     </GlobalContextProvider>
   );
 }

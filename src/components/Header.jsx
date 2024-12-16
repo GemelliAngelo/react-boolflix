@@ -1,5 +1,10 @@
 import { useGlobalContext } from "../context/GlobalContext";
+import Navbar from "./Navbar";
 
 export default function Header() {
-  return;
+  return (
+    <header>
+      <Navbar />
+    </header>
+  );
 }
