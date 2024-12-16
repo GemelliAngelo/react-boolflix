@@ -12,6 +12,7 @@ export default function Main() {
             {movies.map((movie) => (
               <div key={movie.id} className="card">
                 <img src={"https://image.tmbd.org/t/p/w342" + movie.poster} />
+                <span>{Math.floor(movie.vote / 2)}</span>
               </div>
               //   <ul key={movie.id}>
               //     <li>TITLE: {movie.title}</li>
@@ -19,7 +20,7 @@ export default function Main() {
               //     <img
               //       src={"https://flagcdn.com/24x18/" + movie.language + ".png"}
               //     />
-              //     <li>RATING {movie.vote}</li>
+              //     <li>RATING: {movie.vote}</li>
               //   </ul>
             ))}
           </section>
@@ -30,6 +31,7 @@ export default function Main() {
             {series.map((serie) => (
               <div key={serie.id} className="card">
                 <img src={"https://image.tmbd.org/t/p/w342" + serie.poster} />
+                <span>{Math.floor(serie.vote / 2)}</span>
               </div>
               //   <ul key={serie.id}>
               //     <li>TITLE: {serie.title}</li>
@@ -39,7 +41,7 @@ export default function Main() {
               //         src={"https://flagcdn.com/24x18/" + serie.language + ".png"}
               //       />
               //     </li>
-              //     <li>RATING {serie.vote}</li>
+              //     <li>RATING: {serie.vote}</li>
               //   </ul>
             ))}
           </section>
