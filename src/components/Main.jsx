@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../context/GlobalContext";
+import Card from "./Card";
 
 export default function Main() {
   const { movies, series } = useGlobalContext();
@@ -11,26 +12,30 @@ export default function Main() {
           <section className="movies">
             {movies.map((movie) => (
               <div key={movie.id} className="card">
-                <img src={"https://image.tmdb.org/t/p/w342" + movie.poster} />
+                <Card program={movie} />
+                <div className="card-info">
+                  <h3>{movie.title}</h3>
+                  <h4>{movie.originalTitle}</h4>
+                  <figure>
+                    <img
+                      src={
+                        "https://flagcdn.com/24x18/" + movie.language + ".png"
+                      }
+                    />
+                  </figure>
+                  <p>{movie.description}</p>
+                  <h4>{Math.floor(movie.vote / 2)}</h4>
+                </div>
               </div>
-              //   <ul key={movie.id}>
-              //     <li>TITLE: {movie.title}</li>
-              //     <li>ORIGINAL TITLE: {movie.originalTitle}</li>
-              //     <img
-              //       src={"https://flagcdn.com/24x18/" + movie.language + ".png"}
-              //     />
-              //     <li>RATING: {movie.vote}</li>
-              //   </ul>
             ))}
           </section>
         )}
+        <hr />
         <h2>TV SERIES</h2>
         {series && (
           <section className="series">
             {series.map((serie) => (
-              <div key={serie.id} className="card">
-                <img src={"https://image.tmdb.org/t/p/w342" + serie.poster} />
-              </div>
+              <Card program={serie} key={serie.id} />
               //   <ul key={serie.id}>
               //     <li>TITLE: {serie.title}</li>
               //     <li>ORIGINAL TITLE: {serie.originalTitle}</li>

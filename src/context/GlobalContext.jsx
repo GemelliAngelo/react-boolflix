@@ -37,6 +37,7 @@ export const GlobalContextProvider = ({ children }) => {
           id: movie.id,
           title: movie.title,
           originalTitle: movie.original_title,
+          description: movie.overview,
           language: langFlag(movie.original_language),
           poster: movie.poster_path,
           vote: movie.vote_average,
@@ -53,6 +54,7 @@ export const GlobalContextProvider = ({ children }) => {
           id: serie.id,
           title: serie.name,
           originalTitle: serie.original_title,
+          description: serie.overview,
           language: langFlag(serie.original_language),
           poster: serie.poster_path,
           vote: serie.vote_average,
@@ -63,11 +65,11 @@ export const GlobalContextProvider = ({ children }) => {
 
   const globalData = {
     movies,
+    fetchMovies,
     series,
+    fetchSeries,
     query,
     setQuery,
-    fetchMovies,
-    fetchSeries,
   };
 
   return (
