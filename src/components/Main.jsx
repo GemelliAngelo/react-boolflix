@@ -14,8 +14,14 @@ export default function Main() {
               <div key={movie.id} className="card">
                 <Card program={movie} />
                 <div className="card-info">
-                  <h3>{movie.title}</h3>
-                  <h4>{movie.originalTitle}</h4>
+                  <span>
+                    <strong>Titolo: </strong>
+                    {movie.title}
+                  </span>
+                  <span>
+                    <strong>Titolo Originale: </strong>
+                    {movie.originalTitle}
+                  </span>
                   <figure>
                     <img
                       src={
@@ -23,8 +29,8 @@ export default function Main() {
                       }
                     />
                   </figure>
-                  <p>{movie.description}</p>
-                  <h4>{Math.floor(movie.vote / 2)}</h4>
+                  <strong>Voto: {Math.floor(movie.vote / 2)}</strong>
+                  <p className="overview">{movie.description}</p>
                 </div>
               </div>
             ))}
