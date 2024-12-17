@@ -11,28 +11,7 @@ export default function Main() {
         {movies && (
           <section className="movies">
             {movies.map((movie) => (
-              <div key={movie.id} className="card">
-                <Card program={movie} />
-                <div className="card-info">
-                  <span>
-                    <strong>Titolo: </strong>
-                    {movie.title}
-                  </span>
-                  <span>
-                    <strong>Titolo Originale: </strong>
-                    {movie.originalTitle}
-                  </span>
-                  <figure>
-                    <img
-                      src={
-                        "https://flagcdn.com/24x18/" + movie.language + ".png"
-                      }
-                    />
-                  </figure>
-                  <strong>Voto: {Math.floor(movie.vote / 2)}</strong>
-                  <p className="overview">{movie.description}</p>
-                </div>
-              </div>
+              <Card program={movie} key={movie.id} />
             ))}
           </section>
         )}
@@ -42,16 +21,6 @@ export default function Main() {
           <section className="series">
             {series.map((serie) => (
               <Card program={serie} key={serie.id} />
-              //   <ul key={serie.id}>
-              //     <li>TITLE: {serie.title}</li>
-              //     <li>ORIGINAL TITLE: {serie.originalTitle}</li>
-              //     <li>
-              //       <img
-              //         src={"https://flagcdn.com/24x18/" + serie.language + ".png"}
-              //       />
-              //     </li>
-              //     <li>RATING: {serie.vote}</li>
-              //   </ul>
             ))}
           </section>
         )}
