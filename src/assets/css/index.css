@@ -28,6 +28,7 @@ header {
 
 h1 {
   color: red;
+  margin: 10px 0;
 }
 
 .navbar {
@@ -83,6 +84,10 @@ section {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.fa-star {
+  color: rgb(223, 208, 0);
 }
 
 .overview {

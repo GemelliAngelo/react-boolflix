@@ -18,15 +18,27 @@ export const GlobalContextProvider = ({ children }) => {
   const [series, setSeries] = useState([]);
   const [query, setQuery] = useState("");
 
-  const langFlag = (lang) => {
+  const langToFlag = (lang) => {
     if (lang === "en") {
-      return "gb";
+      return "us";
     }
     if (lang === "ja") {
       return "jp";
     }
 
     return lang;
+  };
+
+  const voteToStars = (vote) => {
+    const fullStars = parseInt(Math.round(vote / 2));
+    const starsId = [];
+    for (let i = 1; i <= fullStars; i++) {
+      starsId.push(i);
+    }
+    if (!starsId.length) {
+      return <i className="fa-light fa-star" />;
+    }
+    return starsId.map((id) => <i key={id} className="fa-solid fa-star" />);
   };
 
   const fetchMovies = (query) => {
@@ -38,9 +50,9 @@ export const GlobalContextProvider = ({ children }) => {
           title: movie.title,
           originalTitle: movie.original_title,
           description: movie.overview,
-          language: langFlag(movie.original_language),
+          language: langToFlag(movie.original_language),
           poster: movie.poster_path,
-          vote: movie.vote_average,
+          vote: voteToStars(movie.vote_average),
         }));
         setMovies(moviesList);
       });
@@ -55,9 +67,9 @@ export const GlobalContextProvider = ({ children }) => {
           title: serie.name,
           originalTitle: serie.original_title,
           description: serie.overview,
-          language: langFlag(serie.original_language),
+          language: langToFlag(serie.original_language),
           poster: serie.poster_path,
-          vote: serie.vote_average,
+          vote: voteToStars(serie.vote_average),
         }));
         setSeries(seriesList);
       });

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
 export default function Navbar() {
@@ -11,13 +12,14 @@ export default function Navbar() {
     e.preventDefault();
     fetchMovies(query);
     fetchSeries(query);
+    setQuery("");
   };
 
   return (
     <nav className="navbar">
       <h1>BOOLFLIX</h1>
       <form onSubmit={handleSubmitData}>
-        <input onChange={handleFormData} type="text" />
+        <input value={query} onChange={handleFormData} type="text" />
         <button>CERCA</button>
       </form>
     </nav>

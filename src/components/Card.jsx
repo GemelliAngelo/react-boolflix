@@ -16,7 +16,7 @@ export default function Card({ program }) {
         <figure>
           <img src={"https://flagcdn.com/24x18/" + program.language + ".png"} />
         </figure>
-        <strong>Voto: {Math.floor(program.vote / 2)}</strong>
+        <strong>Voto: {program.vote}</strong>
         <p className="overview">
           <strong>Overview: </strong>
           {program.description}
